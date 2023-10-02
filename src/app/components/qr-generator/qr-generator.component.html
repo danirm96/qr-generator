@@ -1,0 +1,16 @@
+<div class="dropzone mt-5">
+    <input type="file" #fileDropRef id="fileDropRef" (change)="useLogoInQRCode($event)" accept="image/*">
+    <h3>Suelta aquí tu logo</h3>
+    <h3>o</h3>
+    <label for="fileDropRef">Busca tu logo</label>
+</div>
+
+<img *ngIf="logoUrl" [src]="logoUrl" alt="">
+<input type="text">
+<ngx-qrcode-styling
+    #qrcode
+    [config]="config"
+    [type]="'canvas'"
+    [width]="width"
+    [height]="height"
+></ngx-qrcode-styling>
